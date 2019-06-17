@@ -18,4 +18,13 @@ export class AppComponent {
       console.log('this.movie is', data);
     });
   }
+
+  onKeyUp($event: any) {
+    if ($event.keyCode === 13) {
+      console.log('Enter pressed.');
+    } else {
+      console.log($event.key);
+    }
+  }
+
 }
