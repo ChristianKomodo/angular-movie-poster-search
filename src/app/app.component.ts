@@ -8,7 +8,7 @@ import { DataService } from './data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Multiple HTTP get() Methods';
+  title = 'Movie Poster Search';
   movie: Object;
   movieSearch: Object;
   searchTermEntered: string;

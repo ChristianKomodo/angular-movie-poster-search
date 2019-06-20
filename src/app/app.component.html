@@ -1,16 +1,12 @@
 <div class="container">
-<!--
-  <h1>
-    {{ title }}
-  </h1> -->
 
-  <!-- <h3>Movie Search</h3> -->
+  <h3>{{ title }}</h3>
 
   <p>Type in the title of a movie and hit Enter.</p>
-  <input type="text" class="form-control" (keyup.enter)="onSearchEntered($event)">
+	<input type="text" class="form-control" (keyup.enter)="onSearchEntered($event)">
 
   <div *ngIf="foundMovie">
-    <h4>{{foundMovie.Title}} - <small>{{foundMovie.imdbID}}</small></h4>
+    <h4>{{foundMovie.Title}} - <small>IMDB Movie ID: {{foundMovie.imdbID}}</small></h4>
     <img [src]="foundMovie.Poster" />
   </div>
 
