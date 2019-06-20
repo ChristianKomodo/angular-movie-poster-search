@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from './data.service';
+// import { forOwn } from 'lodash/forOwn';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,7 @@ export class AppComponent {
     });
   }
 
-  onMovieSearch(searchTerm) {
+  onMovieSearch(searchTerm: string) {
     this.data.getMovieBySearch(searchTerm).subscribe((data: any) => {
       this.foundMovie = data.Search[0];
     });
