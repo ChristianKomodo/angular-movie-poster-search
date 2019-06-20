@@ -11,28 +11,25 @@ export class AppComponent {
   movie: Object;
   movieSearch: Object;
   searchTermEntered: string;
-  // foundMovies: any[];
   foundMovie: Object;
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
+    // Get Battle Angel as an example
     this.data.getMovie('tt0437086').subscribe(data => {
       this.movie = data;
     });
   }
 
   onMovieSearch(searchTerm) {
-    this.data.getMovieBySearch(searchTerm).subscribe(data => {
+    this.data.getMovieBySearch(searchTerm).subscribe((data: any) => {
       this.foundMovie = data.Search[0];
-      console.log('all found movies:', data.Search);
-      console.log('this.foundMovie is', this.foundMovie);
     });
   }
 
   onSearchEntered(event: any) {
     this.searchTermEntered = event.target.value;
-    // console.log('search term is now', this.searchTermEntered);
     this.onMovieSearch(this.searchTermEntered);
   }
 
