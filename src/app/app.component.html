@@ -4,9 +4,17 @@
     {{ title }}
   </h1>
 
-  <h3>Movie Title Search</h3>
-  <p>Type in the title of a movie and hit Enter.</p>
+  <h3>Movie Search</h3>
 
-  <input (keyup)="onKeyUp($event)">
+  <p>Type in the title of a movie and hit Enter.</p>
+  <input type="text"  class="form-control"  (keyup.enter)="onSearchEntered($event)">
+
+  <div *ngIf="foundMovieID">
+  <h4>Movie Found</h4>
+  <p>Movie Title: {{foundMovieTitle}}</p>
+  <p>IMDB Movie ID: {{foundMovieID}}</p>
+  <p>Movie Poster:</p>
+  <img [src]="foundMoviePosterURL">
+</div>
 
 </div>
