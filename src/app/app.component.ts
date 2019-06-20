@@ -12,28 +12,21 @@ export class AppComponent {
   movieSearch: Object;
   searchTermEntered: string;
   // foundMovies: any[];
-  foundMovies: Object;
-  foundMovieTitle: string;
-  foundMovieID: string;
-  foundMoviePosterURL: string;
+  foundMovie: Object;
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
     this.data.getMovie('tt0437086').subscribe(data => {
       this.movie = data;
-      console.log('this.movie is', this.movie);
     });
   }
 
   onMovieSearch(searchTerm) {
     this.data.getMovieBySearch(searchTerm).subscribe(data => {
-      this.foundMovies = data;
-      console.log('this.foundMovies is', this.foundMovies);
-      this.foundMovieTitle = this.foundMovies.Search[0].Title;
-      this.foundMovieID = this.foundMovies.Search[0].imdbID;
-      this.foundMoviePosterURL = this.foundMovies.Search[0].Poster;
-      console.log('this.foundMovieID is', this.foundMovieID);
+      this.foundMovie = data.Search[0];
+      console.log('all found movies:', data.Search);
+      console.log('this.foundMovie is', this.foundMovie);
     });
   }
 
