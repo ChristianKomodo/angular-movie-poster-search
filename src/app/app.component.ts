@@ -26,7 +26,16 @@ export class AppComponent {
 
   onMovieSearch(searchTerm: string) {
     this.data.getMovieBySearch(searchTerm).subscribe((data: any) => {
-      this.foundMovie = data.Search[0];
+      if (!data.Search) {
+        this.foundMovie = {
+          Title: 'Movie Not Found',
+          imdbID: '',
+          Poster: 'http://fpoimg.com/300x100?text=Movie-Not-Found'
+        }
+      } else {
+        this.foundMovie = data.Search[0];
+      }
+      console.log('found movie is', this.foundMovie);
     });
   }
 
