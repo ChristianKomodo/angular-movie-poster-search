@@ -20,6 +20,7 @@ export class AppComponent {
     // Get Battle Angel as an example
     this.data.getMovie('tt0437086').subscribe(data => {
       this.movie = data;
+      console.log('this.movie is', this.movie);
     });
   }
 
