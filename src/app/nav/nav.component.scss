@@ -1,0 +1,36 @@
+nav {
+    width: 80%;
+    margin: .5em auto 0;
+    padding: 0 26px;
+
+    display: flex;
+    flex-direction: row;
+
+    h1 {
+        margin: 0;
+        font-size: 18px;
+        color: #ccc;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+            list-style: none;
+            margin-left: 16px;
+
+            a {
+                font-size: 14px;
+                color: #999;
+                &:hover {
+                    color: #ccc;
+                }
+            }
+        }
+    }
+}
