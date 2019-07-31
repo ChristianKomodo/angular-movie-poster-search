@@ -9,16 +9,21 @@ import { DataService } from './data.service';
 })
 export class AppComponent {
 
+  whichPage: string;
   movie: Object;
 
   constructor(private data: DataService) { }
 
   ngOnInit() {
+    // Start on the Poster page
+    this.whichPage = 'poster';
+
     // Get Battle Angel as an example
     this.data.getMovie('tt0437086').subscribe(data => {
       this.movie = data;
       console.log('this.movie is', this.movie);
     });
+
   }
 
 }
