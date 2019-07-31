@@ -1,7 +1,9 @@
-<app-nav></app-nav>
+<app-nav (destinationChange)="setDestination($event)"></app-nav>
 
 <div class="container">
 
   <app-poster *ngIf="whichPage == 'poster'"></app-poster>
+
+  <app-quiz *ngIf="whichPage == 'quiz'"></app-quiz>
 
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
+  @Output() destinationChange = new EventEmitter();
+  destination = 'default';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  navigateTo(newDestination) {
+    this.destination = newDestination;
+    console.log(`emitting this.destination: ${this.destination}`);
+    this.destinationChange.emit(this.destination);
   }
 
 }

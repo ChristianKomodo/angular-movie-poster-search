@@ -26,4 +26,9 @@ export class AppComponent {
 
   }
 
+  // Setter for nav
+  setDestination(newPage) {
+    this.whichPage = newPage;
+  }
+
 }
