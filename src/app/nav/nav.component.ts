@@ -17,7 +17,6 @@ export class NavComponent implements OnInit {
 
   navigateTo(newDestination) {
     this.destination = newDestination;
-    console.log(`emitting this.destination: ${this.destination}`);
     this.destinationChange.emit(this.destination);
   }
 

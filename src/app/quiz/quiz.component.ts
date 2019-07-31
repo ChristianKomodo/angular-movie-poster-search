@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizComponent implements OnInit {
 
+  title = 'Mega Movie Quiz';
+
   constructor() { }
 
   ngOnInit() {
