@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
-  selector: 'app-poster',
-  templateUrl: './poster.component.html',
-  styleUrls: ['./poster.component.scss']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class PosterComponent implements OnInit {
+export class SearchComponent implements OnInit {
 
-  title = 'Movie Poster Search';
+  title = 'Movie Search';
   movieSearch: Object;
   searchTermEntered: string;
   foundMovies: Object;

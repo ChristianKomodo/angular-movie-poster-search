@@ -16,7 +16,7 @@ export class AppComponent {
 
   ngOnInit() {
     // Start on the Poster page
-    this.whichPage = 'poster';
+    this.whichPage = 'search';
 
     // Get Battle Angel as an example
     this.data.getMovie('tt0437086').subscribe(data => {
