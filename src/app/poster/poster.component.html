@@ -3,7 +3,13 @@
 <p>Type in the title of a movie and hit Enter.</p>
 <input type="text" class="form-control" (keyup.enter)="onSearchEntered($event)">
 
-<div *ngIf="foundMovie">
-  <h4>{{foundMovie.Title}} - <small>IMDB Movie ID: {{foundMovie.imdbID}}</small></h4>
-  <img [src]="foundMovie.Poster" />
-</div>
+<ul>
+  <li *ngFor="let movie of foundMovies">
+    {{movie.Title}}
+  </li>
+</ul>
+
+<!-- <div *ngIf="foundMovies" *ngFor="let movie of foundMovies">
+  <h4>{{movie.Title}} - <small>IMDB Movie ID: {{movie.imdbID}}</small></h4>
+  <img [src]="movie.Poster" />
+</div> -->

@@ -11,7 +11,7 @@ export class PosterComponent implements OnInit {
   title = 'Movie Poster Search';
   movieSearch: Object;
   searchTermEntered: string;
-  foundMovie: Object;
+  foundMovies: Object;
 
   constructor(private data: DataService) { }
 
@@ -20,18 +20,25 @@ export class PosterComponent implements OnInit {
 
   onMovieSearch(searchTerm: string) {
     this.data.getMovieBySearch(searchTerm).subscribe((data: any) => {
-      if (!data.Search) {
-        this.foundMovie = {
-          Title: 'Movie Not Found',
-          imdbID: '',
-          Poster: 'http://fpoimg.com/300x100?text=Movie-Not-Found'
-        }
-      } else {
-        this.foundMovie = data.Search[0];
-      }
-      console.log('found movie is', this.foundMovie);
+      this.foundMovies = data.Search;
+      console.log('found movies array is', this.foundMovies);
     });
   }
+
+  // onMovieSearch(searchTerm: string) {
+  //   this.data.getMovieBySearch(searchTerm).subscribe((data: any) => {
+  //     if (!data.Search) {
+  //       this.foundMovie = {
+  //         Title: 'Movie Not Found',
+  //         imdbID: '',
+  //         Poster: 'http://fpoimg.com/300x100?text=Movie-Not-Found'
+  //       }
+  //     } else {
+  //       this.foundMovie = data.Search[0];
+  //     }
+  //     console.log('found movie is', this.foundMovie);
+  //   });
+  // }
 
   onSearchEntered(event: any) {
     this.searchTermEntered = event.target.value;
